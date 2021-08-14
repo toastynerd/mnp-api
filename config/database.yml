@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: mnp_api
+  password: <%= ENV['MNP_API_DATABASE_PASSWORD'] %>
+  host: <%= ENV['MNP_API_HOST'] || 'localhost' %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -82,5 +85,3 @@ test:
 production:
   <<: *default
   database: mnp_api_production
-  username: mnp_api
-  password: <%= ENV['MNP_API_DATABASE_PASSWORD'] %>

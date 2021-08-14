@@ -1,0 +1,32 @@
+version: "3"
+volumes:
+  db_data:
+services:
+  mnp_api_db:
+    image: postgres:13.4-alpine
+    container_name: mnp_api_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "mnp_api"
+      POSTGRES_PASSWORD: "mnp api development"
+    ports:
+      - 5500:5432
+
+  mnp_api_app:
+    build: .
+    container_name: mnp_api_app
+    volumes:
+      - .:/app
+    ports:
+      - 3001:3000
+    stdin_open: true
+    tty: true
+    environment:
+      MNP_API_DATABASE_PASSWORD: "mnp api development"
+      MNP_API_HOST: mnp_api_db
+      RAILS_ENV: "development"
+    entrypoint: "entrypoint.sh"
+    command: ["rails", "server", "-p", "3000", "-b", "0.0.0.0"]
+    depends_on:
+      - mnp_api_db
