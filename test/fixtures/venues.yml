@@ -1,0 +1,14 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  key: MyString
+  name: MyString
+
+two:
+  key: MyString
+  name: MyString
+
+test_venue:
+  key: "TST"
+  name: "some test venue"
+
