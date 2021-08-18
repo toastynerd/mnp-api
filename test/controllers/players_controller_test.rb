@@ -9,7 +9,7 @@ class PlayersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal "application/json", @response.media_type
     json_response = JSON.parse(@response.body)
-    assert true, json_response.instance_of?(Array)
+    assert_equal true, json_response.instance_of?(Array)
   end
 
   test "it should be able to find players by name" do
