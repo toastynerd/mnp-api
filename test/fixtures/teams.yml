@@ -1,4 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+test_team:
+  key: "TST"
+  venue_key: "TST"
+  name: "test team of testers"
 
 one:
   key: MyString
@@ -10,7 +14,4 @@ two:
   venue_key: MyString
   name: MyString
 
-test_team:
-  key: "TST"
-  venue_key: "TST"
-  name: "test team of testers"
+
