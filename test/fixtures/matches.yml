@@ -4,8 +4,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+first_match:
+  week: 1
+  home: "TST"
+  away: "TSB"
+  venue: "TST"
+  date: Date.today
+second_match:
+  week: 2
+  home: "TSB"
+  away: "TST"
+  venue: "TST"
+  date: Date.today
+another_one:
+  week: 99
+  home: "PST"
+  away: "PST"
+  venue: "PST"
+  date: Date.tomorrow
